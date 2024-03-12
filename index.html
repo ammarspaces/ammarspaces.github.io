@@ -3,88 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        h1 {
-            margin-top: 0;
-        }
-        .project {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-        .project h3 {
-            margin-top: 0;
-        }
-        .project p {
-            margin-bottom: 5px;
-        }
-        .project a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>Ammar's Port</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
+        <h1>Hello this is Ammar Ashshiddiqi</h1>
         <p>Welcome to my portfolio website</p>
     </header>
     <div class="container">
-        <h2>Projects</h2>
-        <div id="projects"></div>
+        <div class="about-me-container">
+            <div class="photo">
+                <img src="https://media.licdn.com/dms/image/C5603AQEtGbCQZx4ENw/profile-displayphoto-shrink_800_800/0/1634106970315?e=1713398400&v=beta&t=grkL_kWMFVJdcijLBRD5xm3hYyxhYs5wFwAnVXNhaiU" alt="Your Photo" width="240" height="280">
+            </div>
+            <div class="about-me">
+                <h2>About Me</h2>
+                <p>I am a Software Engineer and Coding Teacher with two years of experience. I love to learn while doing my job, because it feels like you did a long journey and doing some discoveries. Currently, I focused my current learning to cyber security especially application security.</p>
+            </div>
+        </div>
+        <div class="projects-container">
+            <h2>Projects</h2>
+            <div id="projects"></div>
+        </div>
+        
     </div>
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <div class="social-profiles">
+            <h2>Social Profiles</h2>
+            <p>
+                <a class="social-links" href="https://github.com/ammarspaces" target="_blank">GitHub</a> |
+                <a class="social-links" href="https://www.linkedin.com/in/ammar-ashshiddiqi-24b115134/" target="_blank">LinkedIn</a> 
+            </p>
+        </div>
+        <p>&copy; 2024 Ammar Ash | Contact Me: ammar.ashshiddiqi@gmail.com</p>
     </footer>
-
-    <script>
-        // Fetch GitHub projects
-        const username = 'ammarspaces';
-        fetch(`https://api.github.com/users/${username}/repos`)
-            .then(response => response.json())
-            .then(data => {
-                const projectsContainer = document.getElementById('projects');
-                data.forEach(project => {
-                    const projectElement = document.createElement('div');
-                    projectElement.classList.add('project');
-                    projectElement.innerHTML = `
-                        <h3>${project.name}</h3>
-                        <p>${project.description ? project.description : 'No description available'}</p>
-                        <a href="${project.html_url}" target="_blank">View on GitHub</a>
-                    `;
-                    projectsContainer.appendChild(projectElement);
-                });
-            })
-            .catch(error => console.error('Error fetching GitHub projects:', error));
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
